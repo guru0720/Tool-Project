@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free Tools - Tools Page</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="icon" href="Icon\fevicon.jpg" type="image/x-icon">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <!-- External Css -->
+  <link rel="stylesheet" href="Css/Home&Tool.css">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="container">
+      <div class="navbar-brand">
+        <img src="Icon/logo.png" alt="Free Tools Logo" class="logo">
+        <a href="index.html" class="brand-title">Free Tools</a>
+      </div>
+      <div class="navbar-menu">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="contactus.html" class="nav-link">Contact Us</a>
+        <input type="text" id="searchInput" class="search-input" placeholder="Search for a tool...">
+        <button onclick="searchTool()" class="search-button">Search</button>
+        <div id="alertBox" class="alert-box">
+          <p id="alertMessage"></p>
+          <button onclick="closeAlert()">Close</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+  
+  
+
+  <!--<nav class="bg-green-600 p-4">
+    <div class="container mx-auto flex justify-between items-center">
+      <a href="Home.html" class="text-white text-2xl font-bold">Free Tools</a>
+      <div class="flex items-center space-x-4">
+            <a href="Home.html" class="text-white">Home</a>
+            <a href="Page\contactus.html" class="text-white">Contact Us</a>
+            <input type="text" id="searchInput" class="p-2 border border-gray-400 rounded" placeholder="Search for a tool...">
+            <button onclick="searchTool()" class="bg-white text-green-600 p-2 rounded ml-2">Search</button>
+            <div class="dropdown">
+            <button class="bg-white text-green-600 p-2 rounded ml-2 dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+            Our Popular Tools
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <li><a class="dropdown-item" href="#">Tool 1</a></li>
+            <li><a class="dropdown-item" href="#">Tool 2</a></li>
+            <li><a class="dropdown-item" href="#">Tool 3</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>!-->
+
+  <!-- Gallery Section -->
+  <section class="container mx-auto p-10">
+    <div class="row" id="toolGallery">
+      <!-- Repeat this block for 30+ cards -->
+      <div class="col-md-3 mb-4 tool-card">
+        <div class="card shadow-lg">
+          <img src="Icon/IMAGE10.png" class="card-img-top" alt="Tool Image">
+          <div class="card-body">
+            <h5 class="card-title">Translator</h5>
+            <p class="card-text">Multi-Language Translator.</p>
+            <a href="Translator.html" class="btn btn-success">Go to Tool</a>
+          </div>
+        </div>
+      </div>
+      <!-- Repeat this block for 30+ cards -->
+       <!-- Repeat this block for 30+ cards -->
+      <div class="col-md-3 mb-4 tool-card">
+        <div class="card shadow-lg">
+          <img src="Icon/IMAGE9.png" class="card-img-top" alt="Tool Image">
+          <div class="card-body">
+            <h5 class="card-title">Text to Multiformat</h5>
+            <p class="card-text">Text-to-Multiformat Converter.</p>
+            <a href="text-Multiformat.html" class="btn btn-success">Go to Tool</a>
+          </div>
+        </div>
+      </div>
+      <!-- Repeat this block for 30+ cards -->
+       <!-- Repeat this block for 30+ cards -->
+      <div class="col-md-3 mb-4 tool-card">
+        <div class="card shadow-lg">
+          <img src="Icon\IMAGE8.png" class="card-img-top" alt="Tool Image">
+          <div class="card-body">
+            <h5 class="card-title">Voice to text</h5>
+            <p class="card-text">Voice-to-Text Converter.</p>
+            <a href="voice to text.html" class="btn btn-success">Go to Tool</a>
+          </div>
+        </div>
+      </div>
+      <!-- Repeat this block for 30+ cards -->
+        <!-- Repeat this block for 30+ cards -->
+      <div class="col-md-3 mb-4 tool-card">
+        <div class="card shadow-lg">
+          <img src="Icon/IMAGE11.png" class="card-img-top" alt="Tool Image">
+          <div class="card-body">
+            <h5 class="card-title">Logo Maker</h5>
+            <p class="card-text">Text to logo maker.</p>
+            <a href="LogoMaker.html" class="btn btn-success">Go to Tool</a>
+          </div>
+        </div>
+      </div>
+       <!-- Repeat this block for 30+ cards -->
+      <div class="col-md-3 mb-4 tool-card">
+        <div class="card shadow-lg">
+          <img src="Icon\IMAGE7.png" class="card-img-top" alt="Tool Image">
+          <div class="card-body">
+            <h5 class="card-title">Net Speed</h5>
+            <p class="card-text">Internet Speed Test.</p>
+            <a href="speedtext.html" class="btn btn-success">Go to Tool</a>
+          </div>
+        </div>
+      </div>
+      <!-- Repeat this block for 30+ cards -->
+       <!-- Repeat this block for 30+ cards -->
+      <div class="col-md-3 mb-4 tool-card">
+        <div class="card shadow-lg">
+          <img src="Icon\IMAGE5.png" class="card-img-top" alt="Tool Image">
+          <div class="card-body">
+            <h5 class="card-title">Video to Audio</h5>
+            <p class="card-text">A video to audio converter.</p>
+            <a href="video to audio.html" class="btn btn-success">Go to Tool</a>
+          </div>
+        </div>
+      </div>
+      <!-- Repeat this block for 30+ cards -->
+       <!-- Repeat this block for 30+ cards -->
+       <div class="col-md-3 mb-4 tool-card">
+        <div class="card shadow-lg">
+          <img src="Icon\IMAGE2.png" class="card-img-top" alt="Tool Image">
+          <div class="card-body">
+            <h5 class="card-title">Image Converter</h5>
+            <p class="card-text">Image file format into another.</p>
+            <a href="Img converter.html" class="btn btn-success">Go to Tool</a>
+          </div>
+        </div>
+      </div>
+      <!-- Repeat this block for 30+ cards -->
+      <!-- Repeat this block for 30+ cards -->
+      <div class="col-md-3 mb-4 tool-card">
+        <div class="card shadow-lg">
+          <img src="Icon\IMAGE.png" class="card-img-top" alt="Tool Image">
+          <div class="card-body">
+            <h5 class="card-title">Image Compressor</h5>
+            <p class="card-text">Process of reducing the size.</p>
+            <a href="Img Com.html" class="btn btn-success">Go to Tool</a>
+          </div>
+        </div>
+      </div>
+      <!-- Repeat this block for 30+ cards -->
+       <!-- Repeat this block for 30+ cards -->
+      <div class="col-md-3 mb-4 tool-card">
+        <div class="card shadow-lg">
+          <img src="Icon\IMAGE3.png" class="card-img-top" alt="Tool Image">
+          <div class="card-body">
+            <h5 class="card-title">WebP to JPG</h5>
+            <p class="card-text">WebP image into JPG format.</p>
+            <a href="Web to Jpg tool.html" class="btn btn-success">Go to Tool</a>
+          </div>
+        </div>
+      </div>
+      <!-- Repeat this block for 30+ cards -->
+       <!-- Repeat this block for 30+ cards -->
+      <div class="col-md-3 mb-4 tool-card">
+        <div class="card shadow-lg">
+          <img src="Icon\IMAGE4.png" class="card-img-top" alt="Tool Image">
+          <div class="card-body">
+            <h5 class="card-title">URL to Image</h5>
+            <p class="card-text">Image download.</p>
+            <a href="url to image.html" class="btn btn-success">Go to Tool</a>
+          </div>
+        </div>
+      </div>
+      <!-- Repeat this block for 30+ cards -->
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="Footer_text">
+      <a href="About us.html">About Us</a>
+      <a href="Terms-Condition.html">Terms & Conditions</a>
+      <a href="contactus.html">Contact Us</a>
+    </div>
+    <p>&copy; 2025 Free Tools. All rights reserved.</p>
+  </footer>
+
+  <!-- Internal JS -->
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+      const cards = document.querySelectorAll('.card');
+      cards.forEach(card => {
+          card.addEventListener('click', function() {
+              window.location.href = this.querySelector('a').href;
+          });
+      });
+  });
+
+  function searchTool() {
+    const searchInput = document.getElementById('searchInput').value.toLowerCase();
+    const toolCards = document.querySelectorAll('.tool-card');
+    let toolFound = false;
+
+    toolCards.forEach(card => {
+        const toolName = card.querySelector('.card-title').innerText.toLowerCase();
+        if (toolName.includes(searchInput)) {
+            card.style.display = 'block'; // Show the matched tool card
+            if (!toolFound) {
+                card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                toolFound = true;
+            }
+        } else {
+            card.style.display = 'none'; // Hide the non-matched tool cards
+        }
+    });
+
+    if (!toolFound) {
+        showAlert("Tool not found");
+    }
+}
+
+
+  function showAlert(message) {
+      const alertBox = document.getElementById('alertBox');
+      const alertMessage = document.getElementById('alertMessage');
+      alertMessage.textContent = message;
+      alertBox.style.display = 'block';
+  }
+
+  function closeAlert() {
+      document.getElementById('alertBox').style.display = 'none';
+  }
+</script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

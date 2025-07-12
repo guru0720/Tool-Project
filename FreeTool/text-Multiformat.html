@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiple Format Converter</title>
+    <style>
+        /* Base Styles */
+        body, html {
+            margin: auto;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f2f5;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            text-align: center;
+              }
+
+            .container {
+              max-width: 800px;
+              margin: 0 auto;
+              margin-top: 100px;
+              margin-bottom: 100px;
+              background-color: #fff;
+              padding: 25px;
+              border-radius: 8px;
+              box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            }
+            
+            h1 {
+              color: #333;
+              margin-bottom: 20px;
+              text-align: center;
+            }
+            
+            .input-field {
+              width: 100%;
+              padding: 10px;
+              margin-bottom: 10px;
+              align-items: center;
+              border: 2px solid #ccc;
+              border-radius: 4px;
+              box-sizing: border-box;
+            }
+            
+            .convert-button {
+              display: block;
+              width: 100%;
+              padding: 10px;
+              font-size: 16px;
+              font-weight: bold;
+              color: #fff;
+              background-color: #4CAF50;
+              border: none;
+              border-radius: 4px;
+              cursor: pointer;
+              text-align: center;
+              transition: background-color 0.3s, transform 0.3s;
+            }
+            
+            .convert-button:hover {
+              background-color: #45a049;
+              transform: scale(1.05);
+            }
+            
+            .result {
+              margin-top: 20px;
+              padding: 10px;
+              background-color: #fff;
+              border: 2px solid #ccc;
+              border-radius: 4px;
+              white-space: pre-wrap;
+            }
+
+            .result-title {
+              margin-bottom: 10px;
+              font-weight: bold;
+              color: #333;
+            }
+            /* Navigation Bar */
+        .navbar {
+            width: 100%;
+            background-color: #218838;
+            padding: 1rem 2rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar .container1 {
+            display: flex;
+            justify-content: space-between;
+            margin-left: 50px;
+            margin-right: 50px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .navbar .brand-title {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 1.7rem;
+        }
+
+        .navbar .nav-link {
+            color: #ffffff;
+            text-decoration: none;
+            margin-left: 1rem;
+            transition: color 0.3s;
+        }
+
+        .navbar .nav-link:hover {
+            color: #ffdd57;
+        }
+
+        /* Footer */
+        .footer {
+            width: 100%;
+            background-color: #218838;
+            padding: 1rem;
+            color: #ffffff;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+        }
+
+        .footer a {
+            color: #ffffff;
+            text-decoration: none;
+            margin: 0 1rem;
+            transition: color 0.3s;
+        }
+
+        .footer a:hover {
+            color: #ffdd57;
+        }
+
+        /* Adjust top padding to avoid content hiding behind the fixed navbar */
+        .content {
+            padding-top: 80px;
+        }
+    </style>
+        <link rel="stylesheet" href="css/Home&Tool.css">
+
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container1">
+            <div class="navbar-brand">
+                <img src="Icon/logo.png" alt="Free Tools Logo" class="logo">
+                <a href="index.html" class="brand-title">Free Tools</a>
+            </div>
+            <div class="navbar-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="Tool.html" class="nav-link">Tools</a>
+                <a href="contactus.html" class="nav-link">Contact Us</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container content">
+      <h1>Text to Multiple Formats Converter</h1>
+      <input id="inputText" class="input-field" type="text" placeholder="Enter text">
+      <button onclick="convertToAll()" class="convert-button">Convert</button>
+      <div id="results"></div>
+    </div>
+  
+    <script>
+      function convertToAll() {
+        var inputText = document.getElementById("inputText").value;
+        var text = inputText.trim();
+        var binary = "";
+        var octal = "";
+        var decimal = "";
+        var hex = "";
+        var ascii = "";
+  
+        for (var i = 0; i < text.length; i++) {
+          var charCode = text.charCodeAt(i);
+          binary += charCode.toString(2) + " ";
+          octal += charCode.toString(8) + " ";
+          decimal += charCode.toString() + " ";
+          hex += charCode.toString(16) + " ";
+          ascii += charCode + " ";
+        }
+  
+        document.getElementById("results").innerHTML = 
+          '<div class="result"><div class="result-title">Binary representation:</div>' + binary.trim() + '</div>' +
+          '<div class="result"><div class="result-title">Octal representation:</div>' + octal.trim() + '</div>' +
+          '<div class="result"><div class="result-title">Decimal representation:</div>' + decimal.trim() + '</div>' +
+          '<div class="result"><div class="result-title">Hexadecimal representation:</div>' + hex.trim() + '</div>' +
+          '<div class="result"><div class="result-title">ASCII representation:</div>' + ascii.trim() + '</div>';
+      }
+    </script>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="Footer_text">
+            <a href="About us.html">About Us</a>
+            <a href="Terms-Condition.html">Terms & Conditions</a>
+            <a href="contactus.html">Contact Us</a>
+        </div>
+        <p>&copy; 2025 Free Tools. All rights reserved.</p>
+    </footer>
+</body>
+</html>

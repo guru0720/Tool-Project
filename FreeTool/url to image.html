@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Downloader</title>
+    <style>
+        /* Base Styles */
+        body, html {
+            margin: auto;
+            margin-top: auto;
+            margin-bottom: auto;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f2f5;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            text-align: center;
+              }
+              h2 {
+            color: #4CAF50;
+            }
+            input, button {
+                padding: 10px;
+                margin: 10px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                font-size: 16px;
+            }
+            button {
+                background-color: #4CAF50;
+                color: white;
+                cursor: pointer;
+            }
+            button:hover {
+                background-color: #45a049;
+            }
+            #preview {
+                display: none;
+                margin-top: 20px;
+                max-width: 100%;
+                height: auto;
+                display: block;
+                margin-left: auto; 
+                margin-right: auto;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                padding: 10px;
+                background-color: white;
+            }
+            
+            /* Navigation Bar */
+          .navbar {
+              width: 100%;
+              background-color: #218838;
+              padding: 1rem 2rem;
+              box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+              position: fixed;
+              top: 0;
+              z-index: 1000;
+          }
+
+          .navbar .container1 {
+              display: flex;
+              justify-content: space-between;
+              margin-left: 50px;
+              margin-right: 50px;
+              align-items: center;
+              flex-wrap: wrap;
+          }
+
+          .navbar .brand-title {
+              color: #ffffff;
+              text-decoration: none;
+              font-size: 1.7rem;
+          }
+
+          .navbar .nav-link {
+              color: #ffffff;
+              text-decoration: none;
+              margin-left: 1rem;
+              transition: color 0.3s;
+          }
+
+          .navbar .nav-link:hover {
+              color: #ffdd57;
+          }
+
+          /* Footer */
+          .footer {
+              width: 100%;
+              background-color: #218838;
+              padding: 1rem;
+              color: #ffffff;
+              text-align: center;
+              position: fixed;
+              bottom: 0;
+          }
+
+          .footer a {
+              color: #ffffff;
+              text-decoration: none;
+              margin: 0 1rem;
+              transition: color 0.3s;
+          }
+
+          .footer a:hover {
+              color: #ffdd57;
+          }
+
+          /* Adjust top padding to avoid content hiding behind the fixed navbar */
+          .content {
+              padding-top: 80px;
+          }
+    </style>
+        <link rel="stylesheet" href="css/Home&Tool.css">
+
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container1">
+            <div class="navbar-brand">
+                <img src="Icon/logo.png" alt="Free Tools Logo" class="logo">
+                <a href="index.html" class="brand-title">Free Tools</a>
+            </div>
+            <div class="navbar-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="Tool.html" class="nav-link">Tools</a>
+                <a href="contactus.html" class="nav-link">Contact Us</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <h2>Download Image from URL</h2>
+    <input type="text" id="imageUrl" placeholder="Enter image URL" size="50">
+    <button onclick="previewImage()">Preview Image</button>
+    <button onclick="downloadImage()">Download Image</button>
+    <img id="preview" alt="Image Preview">
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="Footer_text">
+            <a href="About us.html">About Us</a>
+            <a href="Terms-Condition.html">Terms & Conditions</a>
+            <a href="contactus.html">Contact Us</a>
+        </div>
+    </footer>
+    <script>
+        async function previewImage() {
+            const url = document.getElementById('imageUrl').value;
+            if (!url) {
+                alert('Please enter a valid image URL');
+                return;
+            }
+
+            const preview = document.getElementById('preview');
+            preview.src = url;
+            preview.style.display = 'block';
+        }
+
+        async function downloadImage() {
+            const url = document.getElementById('imageUrl').value;
+            if (!url) {
+                alert('Please enter a valid image URL');
+                return;
+            }
+
+            try {
+                const response = await fetch(url);
+                const blob = await response.blob();
+                const link = document.createElement('a');
+                link.href = URL.createObjectURL(blob);
+                link.download = 'downloaded_image.jpg';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+                URL.revokeObjectURL(link.href);
+            } catch (error) {
+                alert('Failed to download image. Please check the URL and try again.');
+            }
+        }
+    </script>
+  </body>
+</html>

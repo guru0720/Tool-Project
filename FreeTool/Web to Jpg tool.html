@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebP to JPG Converter</title>
+    <style>
+        /* Body and font styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f7f8fc;
+            color: #333;
+            margin: 0;
+            margin-top: 150PX;
+            margin-bottom: 150px;
+            padding: 0;
+        }
+
+        /* Page title */
+        h1 {
+            text-align: center;
+            color: #218838;
+            margin-top: 2rem;
+        }
+
+        /* File input and image output */
+        #input {
+            display: block;
+            margin: 1rem auto;
+            padding: 0.75rem;
+            border: 2px solid #218838;
+            border-radius: 8px;
+            background-color: #ffffff;
+            color: #333;
+            font-size: 1rem;
+            cursor: pointer;
+            width: 80%;
+            max-width: 400px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        #input:hover {
+            border-color: #ffdd57;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        #output {
+            display: block;
+            margin: 2rem auto;
+            border: 1px solid #ccc;
+            padding: 1rem;
+            background-color: #ffffff;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+
+        #downloadButton {
+            display: none;
+            padding: 10px 20px;
+            background-color: #218838;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 8px;
+            margin: 2rem auto;
+            text-align: center;
+            display: block;
+        }
+
+        .navbar {
+            background-color: #4caf50;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            padding: 10px 0;
+        }
+
+        .footer {
+            background-color: #45a049;
+            width: 100%;
+            position: fixed;
+            top: 87%;
+            bottom: 0;
+            left: 0;
+            right: 10%;
+            padding: 0px 0;
+        }
+        .footer p {
+            text-align: center;
+            color: white;
+            margin: 0;
+            padding: 10px 0;
+        }
+
+        @media (max-width: 768px) {
+            .navbar .container {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .navbar .nav-link {
+                margin: 0.5rem 0;
+            }
+
+            #input, #output {
+                width: 90%;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-brand">
+                <img src="Icon/logo.png" alt="Free Tools Logo" class="logo">
+                <a href="index.html" class="brand-title">Free Tools</a>
+            </div>
+            <div class="navbar-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="Tool.html" class="nav-link">Tools</a>
+                <a href="contactus.html" class="nav-link">Contact Us</a>
+            </div>
+        </div>
+    </nav>
+
+    <h1>WebP to JPG Converter</h1>
+    <input type="file" accept="image/*" onchange="convertWebPtoJPG()" id="input">
+    <img id="output" style="max-width: 100%">
+
+    <button id="downloadButton" onclick="downloadImage()">Download JPG</button>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="Footer_text">
+            <a href="About us.html">About Us</a>
+            <a href="Terms-Condition.html">Terms & Conditions</a>
+            <a href="contactus.html">Contact Us</a>
+        </div>
+        <p>&copy; 2025 Free Tools. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function convertWebPtoJPG() {
+            const input = document.getElementById("input");
+            const output = document.getElementById("output");
+            const downloadButton = document.getElementById("downloadButton");
+            const file = input.files[0];
+            if (file.type === "image/webp") {
+                const reader = new FileReader();
+                reader.readAsDataURL(file);
+                reader.onloadend = function () {
+                    const img = new Image();
+                    img.src = reader.result;
+                    img.onload = function () {
+                        const canvas = document.createElement("canvas");
+                        const ctx = canvas.getContext("2d");
+                        canvas.width = img.width;
+                        canvas.height = img.height;
+                        ctx.drawImage(img, 0, 0, img.width, img.height);
+                        const dataURL = canvas.toDataURL("image/png", 1.0); // Change to PNG
+                        output.src = dataURL;
+                        downloadButton.href = dataURL;
+                        downloadButton.download = "converted.png"; // Change to PNG
+                        downloadButton.style.display = "block";
+                    };
+                };
+            } else {
+                alert("Please select a WebP image.");
+            }
+        }
+
+        function downloadImage() {
+            const downloadButton = document.getElementById("downloadButton");
+            if (!downloadButton.href) {
+                alert("Please select Image");
+                return;
+            }
+            const dataURL = downloadButton.href;
+            const a = document.createElement("a");
+            a.href = dataURL;
+            a.download = "converted.png"; // Change to PNG
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+        }
+    </script>
+</body>
+</html>

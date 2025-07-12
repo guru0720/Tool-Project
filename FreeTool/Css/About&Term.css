@@ -1,0 +1,137 @@
+    /* General styles */
+    body {
+      background-color: #f0f0f0; /* Light gray background */
+      font-family: 'Roboto', sans-serif; /* Modern and clean font */
+      color: #333; /* Dark gray text */
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      width: 80%;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    /* Styles for the navigation bar */
+    .navbar {
+      background-color: #2e9e66; /* Fresh green background color */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    }
+
+    .navbar .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+    }
+
+    .navbar-brand {
+      display: flex;
+      align-items: center;
+    }
+
+    .navbar-brand .logo {
+      height: 50px;
+      margin-right: 10px;
+    }
+
+    .brand-title {
+      color: #fff; /* White text color */
+      font-size: 1.8em;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .navbar-menu {
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-link {
+      color: #fff; /* White text color */
+      padding: 10px 15px;
+      border-radius: 5px;
+      text-decoration: none;
+      transition: background-color 0.3s; /* Smooth transition */
+    }
+
+    .nav-link:hover {
+      background-color: #005f46; /* Darker green on hover */
+    }
+
+    /* Styles for the About Us section */
+    .about-us {
+      background-color: #fff; /* White background */
+      padding: 50px 20px;
+      text-align: left;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+      margin-top: 20px;
+      border-radius: 10px;
+    }
+
+    .about-us h1 {
+      color: #007b5e; /* Green text color */
+      text-align: left;
+      margin-bottom: 30px;
+      font-size: 2.5em;
+    }
+
+    .about-us p {
+      margin-bottom: 20px;
+      line-height: 1.7; /* Increase line height for better readability */
+      font-size: 1.1em;
+    }
+
+    /* Styles for the Terms & Conditions section */
+    .terms-conditions {
+      background-color: #fff; /* White background */
+      padding: 50px 20px;
+      text-align: left;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+      margin-top: 20px;
+      border-radius: 10px;
+    }
+
+    .terms-conditions h1 {
+      color: #007b5e; /* Green text color */
+      margin-bottom: 30px;
+      font-size: 2.5em;
+    }
+
+    .terms-conditions h2 {
+      color: #333; /* Dark gray text color */
+      margin-top: 20px;
+    }
+
+    .terms-conditions p {
+      margin-bottom: 20px;
+      line-height: 1.7; /* Increase line height for better readability */
+      font-size: 1.1em;
+    }
+
+    /* Styles for the footer */
+    .footer {
+      background-color: #2e9e66; /* Fresh green background color */
+      padding: 20px;
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .footer a {
+      color: #fff; /* White text color */
+      margin: 0 15px;
+      text-decoration: none;
+      font-size: 1.1em;
+      transition: color 0.3s; /* Smooth transition */
+    }
+
+    .footer p{
+      color: #fff;
+      margin-top: 10px;
+      margin-bottom: 0px;
+    }
+
+    .footer a:hover {
+      color: #ffd700; /* Gold text color on hover */
+    }

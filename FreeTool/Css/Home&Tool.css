@@ -1,0 +1,222 @@
+    /* Internal CSS */
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    .card {
+      width: 16rem;
+    }
+    .card:hover {
+      transform: scale(1.05);
+      transition: 0.3s;
+    }
+        /* Tools Button */
+    
+    .btn-success {
+      background-color: #2e9e66;
+      border-color: #2e9e66;
+    }
+    .btn-success:hover {
+      background-color: #1e623f;
+    }
+    .btn-primary {
+      background-color: #2e9e66;
+      border-color: #2e9e66;
+    }
+    .btn-primary:hover {
+      background-color: #1e623f;
+    }
+        /* See More Button */
+    .see-more-btn {
+      background-color: #2e9e66; /* WhatsApp green */
+      color: white;
+      font-size: 1.25rem;
+      padding: 0.50rem 1.0rem;
+      margin-left: 40%;
+      margin-right: 40%;
+      margin-bottom: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 30px;
+      text-decoration: none;
+      transition: transform 0.3s;
+    }
+    .see-more-btn:hover {
+      transform: scale(1.1);
+      background-color: #1e623f;
+    }
+    .see-more-btn svg {
+      margin-left: 0.5rem;
+    }
+      /* Search Bar */
+    .search-input {
+      padding: 5px;
+      font-size: 1em;
+      border-radius: 10px;
+      border: none;
+      margin-right: 10px;
+      margin-left: 10px;
+    }
+    
+    .search-button {
+      padding: 5px 10px;
+      background-color: #2e9e66; /* Light gray background */
+      border-radius: 10px;
+      border: none;
+      color: #fff; /* White text color */
+      cursor: pointer;
+    }
+    
+    .search-button:hover {
+      background-color: #1e623f; /* Darker gray on hover */
+    }
+
+    /* CSS for custom alert box */
+    .alert-box {
+        display: none; /* Initially hide the alert box */
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 300px;
+        padding: 20px;
+        background-color: #1e623f; /* Change to your preferred background color */
+        color: white; /* Change to your preferred text color */
+        font-size: 45;
+        font-weight: bold;
+        font-style: normal;
+        text-align: center; /* Center the text */
+        border-radius: 5px; /* Rounded corners */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a box shadow */
+        z-index: 1000; /* Ensure it stays on top of other elements */
+    }
+
+    .alert-box button {
+        margin-top: 20px;
+        padding: 10px 20px;
+        background-color: white; /* Change to your preferred button background color */
+        color: #1e623f; /* Change to your preferred button text color */
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .alert-box button:hover {
+        background-color: #ddd; /* Change to your preferred hover color */
+    }
+
+      /* Nav Search button */
+    .search-button {
+      padding: 7px 13px;
+      background-color: #2e9e66;
+      margin-top: 5px;
+      margin-bottom: 5px;
+      border: #2e9e66;
+      border-radius: 18px;
+      color: #fff;
+      cursor: pointer;
+    }
+    .search-button:hover {
+      background-color: #1e623f;
+      color: #ffdd57;
+    }
+
+    /* Header Image & Video */
+    .header-container {
+        position: relative;
+        width: auto;
+        height: auto;
+    }
+    .header-image {
+        width: auto;
+        height: auto;
+        margin-top: 1%;
+        margin-bottom: 0%;
+        border-radius: 25px;
+    }
+    .header-video {
+        display: flex;
+        position: absolute;
+        margin-top: -13%;
+        margin-left: 20%;
+        /*top: 75%;
+        left: 22%;*/
+        transform: translate(-50%, -50%);
+        width: 30%;
+        height: auto;
+        border-radius: 25px;
+      pointer-events: none;
+    }
+
+      /* Styles for the navigation bar */
+      .navbar {
+        background-color: #2e9e66; /* Dark background color */
+        overflow: hidden;
+    }
+
+      .navbar .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+    }
+
+      .navbar-brand {
+        display: flex;
+        align-items: center;
+    }
+
+      .navbar-brand .logo {
+        height: 50px;
+        margin-top: 0px;
+        margin-bottom: 10px;
+        margin-right: 5px;
+    }
+
+      .brand-title {
+        color: #fff; /* White text color */
+        font-size: 1.7em;
+        margin-bottom: 15px;
+        text-decoration: none;
+    }
+
+      .navbar-menu {
+        display: flex;
+        align-items: center;
+    }
+
+      .nav-link {
+        color: #fff; /* White text color */
+        padding: 5px 10px;
+        border-radius: 10px;
+        text-decoration: none;
+    }
+
+      .nav-link:hover {
+        background-color: #1e623f; /* Light gray background on hover */
+        color: #ffdd57;
+    }
+
+          /* Styles for the footer */
+      .footer {
+        background-color: #2e9e66; /* Dark background color */
+        padding: 20px;
+        text-align: center;
+      }
+
+      .Footer_text a {
+        color: #fff; /* White text color */
+        margin: 0 15px;
+        text-decoration: none;
+        font-size: 1.1em;
+      }
+
+      .footer p{
+        color: #fff;
+        margin-top: 10px;
+        margin-bottom: 0px;
+      }
+
+      .Footer_text a:hover {
+        color: #ffd700; /* Light gray text color on hover */
+      }
